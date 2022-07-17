@@ -17,9 +17,9 @@ export const flex: Rule<Theme>[] = [
 
   // shrink/grow/basis
   [/^(?:flex-)?shrink$/, () => ({ 'flex-shrink': 1 })],
-  [/^(?:flex-)?shrink-0$/, () => ({ 'flex-shrink': 0 })],
+  [/^(?:flex-)?shrink-(.+)$/, ([, d]) => ({ 'flex-shrink': h.bracket.cssvar.number(d) })],
   [/^(?:flex-)?grow$/, () => ({ 'flex-grow': 1 })],
-  [/^(?:flex-)?grow-0$/, () => ({ 'flex-grow': 0 })],
+  [/^(?:flex-)?grow-(.+)$/, ([, d]) => ({ 'flex-grow': h.bracket.cssvar.number(d) })],
   [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => ({ 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.rem(d) })],
 
   // directions
