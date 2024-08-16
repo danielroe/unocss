@@ -154,12 +154,12 @@ Since Volar 0.36, [it's now strict to unknown attributes](https://github.com/joh
 
 ```ts
 // html.d.ts
-declare module '@vue/runtime-dom' {
+declare module 'vue' {
   interface HTMLAttributes {
     [key: string]: any
   }
 }
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface AllowedComponentProps {
     [key: string]: any
   }
@@ -182,7 +182,7 @@ declare module 'react' {
 ```ts
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
 
-declare module '@vue/runtime-dom' {
+declare module 'vue' {
   interface HTMLAttributes extends AttributifyAttributes {}
 }
 ```

@@ -685,7 +685,7 @@ declare module 'vue' {
     readonly whenever: UnwrapRef<typeof import('@vueuse/core')['whenever']>
   }
 }
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
